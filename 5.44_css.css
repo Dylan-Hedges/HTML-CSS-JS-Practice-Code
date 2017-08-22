@@ -1,0 +1,48 @@
+/*Star selector*/
+/* the * applies CSS styles to every element in the HTML*/
+*{
+	border: 1px solid lightgrey;
+}
+
+/*Class selector*/
+/*select every <li> wth a class of hello*/
+li .hello{
+	color: red;
+}
+
+
+/*Descendant Selector*/
+/*select every anchor <a> tag inside of a list <li>*/
+li a {
+	color: red;
+}
+
+/*Adjacent Selector*/
+/*select all <ul> that come after an <h4>*/
+/*without the + is all <ul> inside an <h4>*/
+h4 + ul{
+	border: 4px solid red ;
+}
+
+/*Attribute Selector*/
+/*select all elements with the X element, e.g all href atttributes, checkboxes, password fields,*/
+/*select all href where href is refering to google.com*/
+a[href="https://google.com"]{
+	background-color: blue
+}
+
+input[type="text"]{
+	background: grey;
+}
+
+/*nth of type*/
+/*selects every 5th div or every 2nd <li> or every 10th paragraph on a page*/
+/*in this case we turn the background of the 3rd set of <ul> to purple*/
+ul:nth-of-type(3){
+	background-color: purple;
+}
+
+/*will select the 3rd <li> for every <ul>*/
+li:nth-of-type(3){
+	background-color: grey;
+}

@@ -1,0 +1,31 @@
+/*padding stops the overlap of content when fixing the nav bar*/
+body{
+	padding-top: 70px;
+}
+
+/*color - changes the text and icon color*/
+/*background - changes the grey background color*/
+.jumbotron{
+	color: #2c3e50;
+	background:#ecf0f1;
+}
+
+/*change the background of the nav bar*/
+.navbar-inverse{
+	background: #2c3e50;
+
+}
+
+/*the text in the nav bar has very high specificity and hard to change, to get around this
+first try to turn the a{ color:white; }, then use the inspector to see the
+class that is overriding it, specify that class here and change the color*/
+
+.navbar-inverse .navbar-nav>li>a{
+	color: white;
+}
+
+/*to change the logo and brand name to white in top left, turn white, use inspector,
+identify class and then change color (again specificity is high)*/
+.navbar-inverse .navbar-brand{
+	color:white;
+}

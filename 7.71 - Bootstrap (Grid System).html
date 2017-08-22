@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrp Grid System</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<style type="text/css">
+		.pink{
+			background: pink;
+			border: 1px solid purple;
+		}
+		.orange{
+			background: pink;
+			border: 1px dashed red;
+		}
+	</style>
+</head>
+
+	<body>
+	<!-- Every container in bootstrap is / equally between 12 units (important number) -->
+	<!-- The grid system defines how many units each element takes up  -->
+	<!-- e.g for a desktop page we want 4 images in a line to take up equal space (inside of a container, not the entire page), therefore 12 units/4 images = 3 units per image -->
+	<!-- used in responsive websites e.g for a mobile version we want images to be on their own line therefore 12 units/1 image = 12 units per image -->
+	<!-- When collapsing the window at some point all rows will collapse on each other, sizes need to be specified for each device -->
+	<!-- class="container" all grids must be inside a container -->
+	<!-- class="row" adds a row (we dont want to split the whole container only a row) -->
+	<!-- class="col-lg-2" creates a large column and assigns the <div> 2 units -->
+	<!-- class="col-xs-12" = mobile size each element takes up 12 units (aka own line) -->
+	<!-- class="col-sm-6" = tablet size each element takes up 6 units  -->
+	<!-- class="col-md-3" = laptop size each element takes up 3 units -->
+	<!-- class="col-lg-3" = large monitor size each element takes up 3 units -->
+	<!-- if lg and md are the same size, you only need to specify md -->
+
+
+		<div class="container">
+			<!-- class="row" will add a row which can be split by dividing the units -->
+			<div class="row">
+
+				<div class="col-lg-3 cold-md-3 col-sm-6 col-xm-12 pink">TOUR DATE</div>
+				<div class="col-lg-3 cold-md-3 col-sm-6 col-xm-12 pink">TOUR DATE</div>
+				<div class="col-lg-3 cold-md-3 col-sm-6 col-xm-12 pink">TOUR DATE</div>
+				<!-- you can also split the splits by using nested grids -->
+				<div class="col-lg-3 cold-md-3 col-sm-6 col-xm-12">
+						<div class="row">
+							<div class="col-lg-6 cold-md-3 col-sm-6 col-xm-12 orange">
+							FIRST HALF</div>
+							<div class="col-lg-6 cold-md-3 col-sm-6 col-xm-12 orange">
+							SECOND HALF</div>
+						</div>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+</html>

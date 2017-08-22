@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Excercise</title>
+</head>
+<body>
+	<h1>Register</h1>
+
+	<!-- <form action ="http://wikipedia.com" method="get"> will send a GET request-->
+	<!-- placeholder="First Name" will put grey text in the text box -->
+	<!-- for="firstname" id="firstname" will link the label and the text field
+	<!-- all radio buttons need to have the same name ="" if you only want to select one -->
+	<!-- Radio buttons - value ="male" will send back male instead of on  -->
+	<!-- nest the <select> & <option> instead of the <label> -->
+	<!-- <option>Day<option> will display Day as the first option (best practice)-->
+	<!-- <option value="01"> we can have value in the tag but is not required as what we are displaying is the data we want sent back-->
+	<!-- <select name="Day"> put name inside of the tag to send back data -->
+
+	<form >
+
+		<label for ="firstname">First Name</label>
+		<input id ="firstname" type="text" placeholder = "First Name" name ="firstname" required>
+		<label for ="lastname">Last Name</label>
+		<input id = "lastname" type="text" placeholder = "Last Name" name ="lastname" required>
+
+		<p>
+		<input id ="male" type="Radio" name ="gender" value ="male" required >
+		<label for ="male">Male</label>
+		<input id ="female" type="Radio" name ="gender" value ="female"required>
+		<label for ="female">Female</label>
+		<input id ="other" type="Radio" name ="gender" value ="other" required>
+		<label for ="other">Other</label>
+		</p>
+
+		<p>
+		<label for="emailaddress">Email: </label>
+		<input id="emailaddress" type="email" name="emailaddress" placeholder ="Email" required>
+		<label for="password">Password:</label>
+		<input id="password" type="password" name="emailpassword" placeholder ="Password"pattern=".{5,12}" required title="5-12 characters">
+		</p>
+
+		<p>
+		<label> Birthday
+			<select name="Day">
+				<option>Day</option>
+				<option value="01">Jan</option>	
+				<option value="02">Feb</option>	
+				<option value="03">March</option>	
+			</select>
+			<select name="Month">
+				<option>Month</option>
+				<option>01</option>	
+				<option>02</option>	
+				<option>03</option>	
+			</select>
+			<select name="Year">
+				<option>Year</option>
+				<option>1990</option>	
+				<option>1991</option>	
+				<option>1992</option>	
+			</select>
+		</label>
+		</p>
+
+		<label for="checkbox">I agree to the terms and conditions </label>
+		<input id="checkbox" type="checkbox" required>
+
+		<p>
+		<button>Submit</button>
+		</p>
+
+	</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+img{
+	/*width: 100px; changes the size of the images to be 100px each*/
+	/*width: 30%; responsively changes the size each image to take up 30% of the page*/
+	/*float: left; by default HTML will add some white spacing between pictures, float removes this*/
+
+	/*width: 100px;*/
+	width: 30%;
+	float: left;
+
+	/* currently we have 3 images on a line @ 30% each, this makes 90% of the page*/
+	/*to add spacing between margins we divide the remaining 10% equaually which = 1.66%*/
+	margin:1.66%;
+}
+
+p{
+	/*margin-left: 1.66%; needs to be the same as the images to make it inline*/
+	/*font-weight:800px; adds bolding to the font*/
+	font-family: Raleway;
+	margin-left: 1.66%;
+	font-size: 23px;
+	font-weight: 800;
+	text-transform: uppercase;
+
+	/*code for line*/
+	/*the reason why its padding and not margin is because its inside the element*/
+	border-bottom: 2px solid #f1f1f1;
+	width: 50%;
+	padding-bottom: 20px;
+}

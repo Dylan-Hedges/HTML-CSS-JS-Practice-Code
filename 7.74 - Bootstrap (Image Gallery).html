@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Gallery</title>
+	<!-- Links to bootstrap.css file -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Links to Font Awesome Bootstrap CDN library -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Ensure our CSS sheet comes 2nd as we want to override bootstrap.css -->
+	<link rel="stylesheet" type="text/css" href="7.74_css.css">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js" 
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  	crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body>
+		<!-- class="navbar-inverse" reverse color to dark background & light text -->
+		<!-- class="navbar-fixed-top" will keep nav bar at top of screen when scrolling, this will overlap the jumbotron - add 70px padding in a .css to the body  -->
+		<nav class="navbar navbar-inverse navbar-fixed-top"> 
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Charmander" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+		      		</button>
+		      		<!-- class="glyphicon glyphicon-picture" inserts a picture icon directly from bootstrap-->
+					<!-- manually type a space before text to add some spacing between the text & the icon -->
+					<a href="" class="navbar-brand"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> IMGZ</a>
+				</div>
+				<div class="collapse navbar-collapse" id="Charmander">
+					<ul class="nav navbar-nav">
+						<li><a href="">About</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="">Sign Up</a></li>
+						<li><a href="">Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+	<div class="container">
+		
+		<div class="jumbotron">
+			<!-- class="fa fa-money" inserts a money icon from the Font Awesome CDN Bootstrap library (linked in the <head>) -->
+			<!-- icons act like fonts - just change color, size etc. in the CSS file  -->
+			<h1><i class="fa fa-camera-retro" aria-hidden="true"></i> The Image Gallery</h1>
+			<p>A collection of images</p>
+		</div>
+
+		<div class="row">
+			<!-- when large = 3 images, when medium = 2 images, small & xsmall = 1 image -->
+			<div class ="col-lg-4 col-md-6">
+			<!-- class="thumbnail" will shrink images and add a nice border -->
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+			<div class ="col-lg-4 col-md-6">
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+			<div class ="col-lg-4 col-md-6">
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+			<div class ="col-lg-4 col-md-6">
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+			<div class ="col-lg-4 col-md-6">
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+			<div class ="col-lg-4 col-md-6">
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+			<div class ="col-lg-4 col-md-6">
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+			<div class ="col-lg-4 col-md-6">
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+			<div class ="col-lg-4 col-md-6">
+				<div class="thumbnail">
+					<img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+</body>
+</html>

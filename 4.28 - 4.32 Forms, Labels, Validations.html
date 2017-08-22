@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- <form> packages the input fields togehter without the <form> tags data will not get sent anywhere -->
+
+<!-- action = where the form sends data to, method = GET or POST -->
+<!-- if you dont specify an action the form will be sent to current page, the page will just refresh  -->
+<!-- in the below we send data to wikipedia, we wouldnt do this -->
+<!-- name="username", this will create a K/V pair linking what is typed in the box to username  -->
+<!-- name="password" also creates a K/V pair, the name part is a variable -->
+<!-- placeholder="username" will put grey text in the box indicating what to type -->
+<!-- data is extracted from the username + password fields and sent to the back end using action + method -->
+<!-- label tags help identify what the text field corrisponds to -->
+<!-- validations in HTML - cant do customised validations> -->
+<!-- not empty validation = required, will prompt user if empty -->
+<!-- by specifying username or email or password it will change the validation -->
+
+<form action="http://wikipedia.org", method="GET"> 
+	
+	<!-- To link labels to fields we can either nest them inside the label -->
+	<label>Username:
+		<input name="username", type="text", placeholder ="username" required>
+	</label>
+	
+	<!-- we can have validation for email that will check if the @ symbol etc. is in place -->
+	<label for id="email">Email:</label>
+	<input id="email", name="email", type="email", placeholder ="email" required>
+
+	<!-- or we can link labels to fields using for="" and id="" -->
+	<label for="username">Password</label>
+	<input id="username", name="password", type="password", placeholder="password" required>
+
+
+	
+
+	<input type="submit">
+	<input type="checkbox">
+	<input type="color">
+	
+	<button>Login</button>
+</form>
+
+
+
+
+
+</body>
+</html>

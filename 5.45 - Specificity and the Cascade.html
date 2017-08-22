@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Specificity</title>
+
+	<style type="text/css">
+		/*for body{} the the text and the <li> will all turn red*/
+		/*this is because the <ul><li> are a child of the parent <body>*/
+		body{
+			color: red;
+		}
+
+		/*for ul{} only the child <ul> will be changed, the parent <body> text will not*/
+		/*by looking on the chrome inspector you will see it inherits the color from the body but this is striked out as it is overriden by the ul{}*/
+		ul{
+			color: purple;
+		}
+
+		/*for p{} only the child <p> will be changed, the parent <body> text will not*/
+		/*Specificity is multiple styles targeting 1 element, in this case red (<body>) & green (p{}) are targeting the <p> tags*/
+		/*The more specific something is the more likely it will win, e.g <p> is more specific than <body>*/
+		p{
+			color: green;
+		}
+
+		/*In the below yellow beats orange because a class is more specific than an <li>, but then grey will beat yellow because an id is more specific than a class*/
+		/*1st level specificity - Type Selector*/
+		li{
+			color: orange;
+		}
+		/*2nd level specificity - Class Selector (attribute, pesudo-class also)*/
+		.highlight{
+			color: yellow;
+		}
+		/*3rd level specificity - ID Selector*/
+		#special{
+			color: grey;
+		}
+
+		/*Levels of specifity also apply to elements*/
+		/*1st Level - All Lists*/
+		li{}
+		/*2nd Level - Lists with <a> anchor tags*/
+		li a {}
+		/*3rd Level - An <a> tag that comes directly after a list*/
+		li + a{}
+
+
+	</style>
+
+</head>
+	<body>
+		Body Text
+
+		<p>Paragraph Text</p>
+
+		<ul>
+			<li id="special" class="highlight">John</li>
+			<li>Paul</li>
+			<li>George</li>
+			<li class="highlight">Ringo</li>
+		</ul>
+	</body>
+
+</html>

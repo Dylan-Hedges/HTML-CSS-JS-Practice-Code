@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bootstrap Basics</title>
+	<!-- bootstrap.css is a collection of classes, these can be used like legos -->
+	<!-- Remember: you can override classes by recreating the class later in the CSS file-->
+	
+	<!-- Links to the bootstrap.css file that is local, this can also be accessed online -->
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+
+	<!-- Links to jQuery via the internet (this MUST come before the link to Javascript) -->
+	<!-- Makes Javascript (linked below) work -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" 
+	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  	crossorigin="anonymous"></script>
+
+	<!-- Links to Javascript via the internet  -->
+	<!-- Makes the "Default Nav Bar" from Bootstrap work -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+	<!--========Nav Bar========-->
+	<!-- Seperate containers are required as we still want to center our navigation but not include the rest of the content in the nav bar -->
+	<!-- class="navbar navbar-deafult" 2 classes - initalises nav bar-->
+	<!-- class="navbar-header" set position for home button/logo  -->
+	<!-- class="navbar-brand" creates a home button, use with <a> -->
+	<!-- class="nav navbar-nav" 2 classes - add pages to left of nav bar -->
+	<!-- class="nav navbar-nav navbar-right" 3 classes - add page names to the right# -->
+	<!-- class="collapse navbar-collapse" collapses/hides page names when page shrinks (still requires hamburger), your page names <ul> & <li> must be inside of this <div>-->
+	<!-- class="navbar-toggle collapsed" creates hamburger so you can access your pages once you have collapsed the page enough -->
+	<!-- the hamburger consists of an HTML button and <span> tags -->
+	<!-- The hamburger and the content you want to collapse must have the same target and id, e.g data-target="#Charmander" and id="Charmander", otherwise wont collapse -->
+	<!-- Likewise if any <ul><li> are outside of the class="collapse navbar-collapse" they will not be collapsed and cant be accessed via the hamburger -->
+	<!-- Key: 1. take nav bar from bootstrap 2. dissect pieces we need -->
+	<body>
+		<nav class="navbar navbar-default"> 
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Charmander" aria-expanded="false">
+				        <span class="sr-only">Toggle navigation</span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+		      		</button>
+					<a href="" class="navbar-brand">Koffee</a>
+				</div>
+				<div class="collapse navbar-collapse" id="Charmander">
+					<ul class="nav navbar-nav">
+						<li><a href="">About</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="">Sign Up</a></li>
+						<li><a href="">Login</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+	<!--========Default Nav Bar (created on Bootstrap)========-->
+		<nav class="navbar navbar-default">
+		  	<div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#">Brand</a>
+		    </div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+		        <li><a href="#">Link</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Action</a></li>
+		            <li><a href="#">Another action</a></li>
+		            <li><a href="#">Something else here</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">Separated link</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">One more separated link</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		      <form class="navbar-form navbar-left">
+		        <div class="form-group">
+		          <input type="text" class="form-control" placeholder="Search">
+		        </div>
+		        <button type="submit" class="btn btn-default">Submit</button>
+		      </form>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#">Link</a></li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="#">Action</a></li>
+		            <li><a href="#">Another action</a></li>
+		            <li><a href="#">Something else here</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="#">Separated link</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		    </div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+
+
+		<!-- ========Container========-->
+		<!-- class="container" will center, space and add marhind to anything that is inside it, this means content wont be streched across the page -->
+		<div class="container">
+			
+			<!-- ****Buttons**** -->
+			<h1>Bootstrap Basics</h1>
+			<!-- creates a green small button with the word Click me inside-->
+			<!-- makes the same button but with an active look -->
+			<!-- makes the same button but with a disabled look -->
+			<button class="btn btn-success btn-sm">Click me</button>
+			<button class="btn btn-success btn-sm active">Click me</button>
+			<button class="btn btn-success btn-sm" disabled="disabled"">Click me</button>
+			<!-- creates a large blue button with a link to getbootstrap.com -->
+			<a href="http://www.getbootstrap.com" class ="btn btn-danger btn-large">Bootstrap Website</a>
+			
+
+			<!--========Jumbotron========-->
+			<div class ="jumbotron">
+				<h1>This is a jumbotron</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<button class=" btn btn-danger btn-lg">Click Me</button>
+			</div>
+
+			 <!--========Multiple line Form========-->
+			 <!-- class="form-group" implements spacing between inputs, buttons etc., you use this to group labels and input fields together -->
+			 <!-- class="form-control" styles inputs to look nicer & adds spacing -->
+			 <!-- class="help-block" is light grey instruction text -->
+			<form>
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">Email address</label>
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">Password</label>
+			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputFile">File input</label>
+			    <input type="file" id="exampleInputFile">
+			    <p class="help-block">Example block-level help text here.</p>
+			  </div>
+			  <div class="checkbox">
+			    <label>
+			      <input type="checkbox"> Check me out
+			    </label>
+			  </div>
+			  <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+
+			<!--========Single/inline form========-->
+			<!--class="form-inline" this is the only different that makes it single/inline instead of a multi line form  -->
+			<form class="form-inline">
+			  <div class="form-group">
+			    <label for="exampleInputName2">Name</label>
+			    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputEmail2">Email</label>
+			    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+			  </div>
+			  <button type="submit" class="btn btn-default">Send invitation</button>
+			</form>
+			</div>
+		</div>
+
+	</body>
+</html>

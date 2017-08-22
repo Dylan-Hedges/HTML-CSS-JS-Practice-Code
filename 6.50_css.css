@@ -1,0 +1,41 @@
+/*Use the inspector in chrome to play around with font sizes*/
+/*16px is the default for em*/
+/*font-family =  font for text*/
+/*font-size =  font size*/
+/*font-size: 2.0em = x2 font of parent*/
+/*font-weight = thickness of font, e.g more bold*/
+/*line-height = spacing between lines*/
+/*text-align: center = will center the text in the middle of the page*/
+/*text-decoration: line-through; = strikethrough*/
+/*text-decoration: underline; = underline*/
+
+
+/*Make the body text 10px*/
+body{
+	font-size: 10px;
+
+}
+
+/*Make <h1> x5 lager than its parent <body>*/
+/*Indie Flower is a font we have taken from google fonts, it is linked in our HTML*/
+h1{
+	font-family: Indie Flower;
+	font-size: 5.0em;
+	text-align: center;
+	text-decoration: line-through;
+}
+
+/*Make <p> x2 larger than its parent <body>*/
+p{
+	font-family: "Arial";
+	font-size: 2.0em;
+	line-height: 1.5;
+	text-decoration: underline;
+}
+
+/*Span refers to the part of the content in HTML that we want to single out*/
+/*Make <span> x2 larger than its parent <p>* (note this is nested inside <body> so is x2 then x3*/
+span{
+	font-size: 3.0em;
+	font-weight: bold;
+}

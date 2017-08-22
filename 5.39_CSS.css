@@ -1,0 +1,57 @@
+/*These are the colors, font size etc that will be applied to the HTML*/
+/*We can specify colors in a number of ways*/
+
+/*specifies the color for h1 using Hex*/
+h1 {
+	color: #F930DF;
+}
+
+/*specifies the color for h2 by typing the name*/
+h2 {
+	color:darkred;
+
+	/*adds a background to all h2 titles*/
+	background: rgb(255,255,255);
+
+	/******adds a border to the element, need to specify color, size and style e.g solid, dashed*/
+	/*border-color: red;
+	border-width: 5px;
+	border-style: solid;*/
+
+	/*shotcut for the above*/
+	border: 6px solid black;
+}
+/*specifies the color for h3 using RGB codes*/
+h3{
+	color:rgb(163,32,32);
+}
+
+/*specifies the color for h4 & h5 using RGB & opacity*/
+/*opacity is determined from 0-1, 0 =transparent, 1 = full color*/
+/*we use "rgba instead of rgb if we want to specify opacity*/
+
+h4{
+	color:rgba(163,32,32, 1);
+}
+
+h5{
+	color:rgba(163,32,32, .5);
+}
+
+/*specifies the color for lists using RGB & opacity*/
+li{
+	color:rgba(163,32,32, .1);
+}
+
+body{
+
+	/*****set the background to a specific color*****/
+	/*background: pink;*/
+
+	/*or set the backgound as an image contained in the URL*/
+	background: url(http://i1.wp.com/static.web-backgrounds.net/uploads/2012/08/City_Landscape_Background.jpg);
+	/*makes it so the image does not repeat over and over*/
+	background-repeat: no-repeat;
+	/*streches the image across the page*/
+	background-size: cover;
+}

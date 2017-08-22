@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inputs Demo</title>
+</head>
+
+<!-- radio button - cant turn on and off, only one choice -->
+<!-- checkbox - can turn on and off, multiple choices -->
+<!-- default for <form> is action = refresh page + method = GET -->
+<!-- <name> assigns a name to the data that is typed into the text fields -->
+<!-- when we want to connect inputs we have to assign it the same name, i.e we want the user to only be able to pick one answer, in this case either the radio button for cats or for dogs -->
+<!-- id="cats" will link the label Cats: to the radio button for cats  -->
+<!-- name="animal" will make it so the user can only selection one radio button -->
+<!-- value="DOGS" will store the value DOGS in animal (default value = on) when the Go button is selected -->
+<!-- <select> will create a drop down, <option> will populate it with options -->
+<!-- <select name="color"> will send the name of the colour to the browser along with either CATS or DOGS -->
+<!-- using <option value="angry" will send the value Angry and not Red -->
+<!-- <textarea> will create a large text box, you can specify size by specifying the rows and columns -->
+<!-- <name="paragraph" will pass whatever is pass whatever is typed in the box to the browser -->
+
+	<!-- <input type="radio"> -->
+	<!-- <input type="checkbox"> -->
+
+<body>
+		<form>
+
+			<!-- Radio buttons -->
+			<p>Do you prefer cats or dogs?</p>
+
+			<label for id="cats">Cats:</label>
+			<input name="animal" id ="cats" type="radio" value="DOGS">
+			<label for id="dogs">Dogs:</label>
+			<input name="animal" id="dogs" type="radio" value="CATS">
+
+			<p>Whats your favorite color?</p>
+
+			<!-- Drop down menus -->
+			<select name="color">
+				<option>Yellow</option>
+				<option value="Angry">Red</option>
+				<option value="Calm">Blue</option>
+			</select>
+
+			<!-- Large text field -->
+			<p>Why is this your favorite?</p>
+			<p>
+			<textarea name="paragraph" rows="10" cols="50"></textarea>
+			</p>
+
+			<!-- Go button -->
+			<p>
+			<button>Go</button>
+			</p>
+
+		</form>
+	</body>
+</html>

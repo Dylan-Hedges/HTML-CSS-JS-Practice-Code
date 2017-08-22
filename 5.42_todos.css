@@ -1,0 +1,27 @@
+/*Element sector*/
+p{
+	background-color: red;
+}
+
+div{
+	background-color: orange;
+	border: 4px dashed black;
+}
+
+/*this gives all <li> a background colo*/
+li{
+	border: 2px solid red;
+}
+
+/*ID Selector*/
+/*# followed by the id applies CSS styles to the HTML with this id*/
+
+#tomato{
+	background-color: yellow;
+}
+
+/*Class Selector*/
+/*. followed by the class name applies the CSS styles to all HTML elements in this class*/
+.completed{
+	text-decoration: line-through;
+}
