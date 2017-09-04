@@ -54,7 +54,8 @@ h1{
 
 .selected {
     color: white;
-    background: steelblue;}
+    background: steelblue;
+}
 
 button {
     border: none;
