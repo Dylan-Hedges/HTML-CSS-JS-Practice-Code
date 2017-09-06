@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Patatap</title>
+
+    <script type="text/javascript" src="js/paperjs/dist/paper-full.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/195-202.css">
+
+
+    
+    <!--NOTE: type="text/paperscript" and  canvas="myCanvas" -->
+<script type="text/paperscript" canvas="myCanvas">
+   var keyData = {
+       a: {
+           color: "purple",
+           sound: new Howl({
+               src: ['sounds/bubbles.mp3']
+            })
+  
+       },
+       s: {
+           color: "green",
+           sound: new Howl({
+               src: ['sounds/clay.mp3']
+            })
+  
+       },
+       e: {
+           color: "yellow",
+           sound: new Howl({
+               src: ['sounds/confetti.mp3']
+            })
+  
+       }
+   }
+
+  
+    
+    var circles = [];
+    
+    function onKeyDown(event) {
+        if(keyData[event.key]){
+            
+        //view.size.width takes the width of the screen (responsive)
+        //view.size.height takes the height of the screen (responsive)
+        //Takes the screens width and height and stores it in a variable
+        var maxPoint = new Point(view.size.width, view.size.height);
+        
+        //Point.random(); generates a random number between 0 & 1, this is then storred in a variable
+        var randomPoint = Point.random();
+        
+        //Multiply the screen by a random number & multiply the height by a random number, this creates 2 new x, y coordinates, store in var
+        var point = maxPoint * randomPoint;
+        
+        //We set the coordinates of circle = "point", set radius = 10 and color = red
+        //We define our circles position and size, we cannot add .fillColor="orange" to the end of this as it will pass the string "orange" which does not work with "circles[i].fillColor.hue +=1" used later on
+        //Create a new circle at the random "point" with a radius of 500
+        var newCircle = new Path.Circle(point, 500);
+        
+        newCircle.fillColor = keyData[event.key].color;
+            
+        keyData[event.key].sound.play();
+        
+        //Push our circle into an Array called circles
+        circles.push(newCircle);
+            
+        }
+    }
+    
+    //Whenever a new frame is called (Paper.js defines)
+    function onFrame(event) {
+        //Loop through all the circles
+        for(var i = 0; i < circles.length; i++){
+            //+1 to the hue of the circle color
+            circles[i].fillColor.hue += 1;
+            //Also reduce the size of circle by 10% per frame
+            circles[i].scale(0.9);
+        }
+
+    }
+
+
+    </script>
+
+
+    </script>
+
+
+    
+    
+</head>
+<body>
+    <canvas id="myCanvas" resize></canvas>
+</body>
+</html>

@@ -1,0 +1,11 @@
+/*We dont want to limit the animations to a small section of the page, setting width: 100% means animations can be displayed anywhere*/
+canvas {
+    width: 100%;
+    background: black;
+}
+
+/*We do the following to remove the default margin and make body take up the entire width and height of the page & as a result so will our canvas*/
+body, html {
+    height: 100%;
+    margin: 0;
+}
