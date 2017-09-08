@@ -12,59 +12,55 @@
     
     <!--NOTE: type="text/paperscript" and  canvas="myCanvas" -->
 <script type="text/paperscript" canvas="myCanvas">
-   var keyData = {
-       a: {
+    var keyData = {
+        a: {
            color: "purple",
            sound: new Howl({
                src: ['sounds/bubbles.mp3']
             })
-  
-       },
-       s: {
-           color: "green",
-           sound: new Howl({
-               src: ['sounds/clay.mp3']
+        },
+        s: {
+            color: "green",
+            sound: new Howl({
+            src: ['sounds/clay.mp3']
             })
-  
        },
-       e: {
-           color: "yellow",
-           sound: new Howl({
-               src: ['sounds/confetti.mp3']
+        e: {
+            color: "yellow",
+            sound: new Howl({
+            src: ['sounds/confetti.mp3']
             })
-  
        }
-   }
-
-  
-    
+    }
     var circles = [];
     
     function onKeyDown(event) {
         if(keyData[event.key]){
             
-        //view.size.width takes the width of the screen (responsive)
-        //view.size.height takes the height of the screen (responsive)
-        //Takes the screens width and height and stores it in a variable
-        var maxPoint = new Point(view.size.width, view.size.height);
-        
-        //Point.random(); generates a random number between 0 & 1, this is then storred in a variable
-        var randomPoint = Point.random();
-        
-        //Multiply the screen by a random number & multiply the height by a random number, this creates 2 new x, y coordinates, store in var
-        var point = maxPoint * randomPoint;
-        
-        //We set the coordinates of circle = "point", set radius = 10 and color = red
-        //We define our circles position and size, we cannot add .fillColor="orange" to the end of this as it will pass the string "orange" which does not work with "circles[i].fillColor.hue +=1" used later on
-        //Create a new circle at the random "point" with a radius of 500
-        var newCircle = new Path.Circle(point, 500);
-        
-        newCircle.fillColor = keyData[event.key].color;
-            
-        keyData[event.key].sound.play();
-        
-        //Push our circle into an Array called circles
-        circles.push(newCircle);
+            //view.size.width takes the width of the screen (responsive)
+            //view.size.height takes the height of the screen (responsive)
+            //Takes the screens width and height and stores it in a variable
+            var maxPoint = new Point(view.size.width, view.size.height);
+
+            //Point.random(); generates a random number between 0 & 1, this is then storred in a variable
+            var randomPoint = Point.random();
+
+            //Multiply the screen by a random number & multiply the height by a random number, this creates 2 new x, y coordinates, store in var
+            var point = maxPoint * randomPoint;
+
+            //We set the coordinates of circle = "point", set radius = 10 and color = red
+            //We define our circles position and size, we cannot add .fillColor="orange" to the end of this as it will pass the string "orange" which does not work with "circles[i].fillColor.hue +=1" used later on
+            //Create a new circle at the random "point" with a radius of 500
+            var newCircle = new Path.Circle(point, 500);
+
+            //Fill the new circle using the color defined in the keyData object
+            newCircle.fillColor = keyData[event.key].color;
+
+            //Play the sound as defined in the keyData object 
+            keyData[event.key].sound.play();
+
+            //Push our circle into an Array called circles
+            circles.push(newCircle);
             
         }
     }
@@ -73,18 +69,23 @@
     function onFrame(event) {
         //Loop through all the circles
         for(var i = 0; i < circles.length; i++){
+            //Reduce the size of circle by 10% per frame
+            circles[i].scale(0.9);
             //+1 to the hue of the circle color
             circles[i].fillColor.hue += 1;
-            //Also reduce the size of circle by 10% per frame
-            circles[i].scale(0.9);
+            //Deletes circles from the screen and the array (currently just hides on screen but circle remains in the Array, this can be an issue as the Array gets larger)
+            //.area checks the surface area of the circles in px
+            if(circles[i].area < 1){
+                //circles[i].remove(); circle is removed from screen
+                circles[i].remove();
+                //circles.splice(i, 1); circle is removed from the array
+                circles.splice(i, 1);
+                //i--; is decremented so the loop doesn't skip a circle now that it's been shifted as a result of the .splice() function. 
+                i--;
+                console.log(circles);
+            }
         }
-
     }
-
-
-    </script>
-
-
     </script>
 
 
